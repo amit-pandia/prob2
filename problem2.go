@@ -19,7 +19,6 @@ func main() {
 
 	tw := testWrapper{}
 	// read no. of tests
-	// fmt.Println("Enter Test cases:")
 	_, err := fmt.Scanf("%d", &tw.TestCount)
 	if err != nil {
 		return
@@ -29,14 +28,12 @@ func main() {
 		t := test{}
 
 		// read no. of bags
-		// fmt.Println("Enter no of bags:")
 		_, err := fmt.Scanf("%d", &t.bagCount)
 		if err != nil {
 			return
 		}
 
 		length := t.bagCount
-		//fmt.Println("Enter the inputs: ")
 		t.candiesPerBag = make([]int, length)
 		for i := 0; i < length; i++ {
 			fmt.Scan(&t.candiesPerBag[i])
@@ -46,7 +43,6 @@ func main() {
 	}
 
 	// calculate result
-
 	for idx, t := range tw.testData {
 		sumCandies := 0
 		for _, c := range t.candiesPerBag {
@@ -62,7 +58,6 @@ func main() {
 			} else {
 				t.result = -1
 			}
-
 		}
 		tw.testData[idx] = t
 	}
